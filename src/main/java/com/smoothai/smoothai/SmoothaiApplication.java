@@ -6,11 +6,9 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.context.annotation.Bean;
 
-import com.smoothai.smoothai.storage.StorageProperties;
 import com.smoothai.smoothai.storage.StorageService;
 
 @SpringBootApplication
-@EnableConfigurationProperties(StorageProperties.class)
 public class SmoothaiApplication {
 
 	public static void main(String[] args) {

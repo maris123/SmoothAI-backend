@@ -7,6 +7,7 @@ import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
+import org.apache.commons.lang.RandomStringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -16,14 +17,9 @@ import org.springframework.web.multipart.MultipartFile;
 @Service
 public class FileSystemStorageService implements StorageService {
 
-	@Value("${smoothai.image.directory}")
-	private final Path saveLocation;
-
-	@Autowired
-	public FileSystemStorageService(StorageProperties properties) {
-		this.saveLocation = Paths.get(properties.getLocation());
-	}
-
+	@Value("${smoothai.image.directory:/upload-dir}")
+	private Path saveLocation;
+	
 	@Override
 	public void store(MultipartFile file) {
 		String filename = StringUtils.cleanPath(file.getOriginalFilename());
@@ -50,4 +46,12 @@ public class FileSystemStorageService implements StorageService {
             throw new StorageException("Could not initialize storage", e);
         }
     }
+	
+	private static String generateRandomFilename() {
+		int length = 10;
+	    boolean useLetters = true;
+	    boolean useNumbers = false;
+	    
+	    return RandomStringUtils.random(length, useLetters, useNumbers);
+	}
 }
