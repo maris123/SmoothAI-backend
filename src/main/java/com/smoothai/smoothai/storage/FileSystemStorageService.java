@@ -8,6 +8,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
@@ -15,6 +16,7 @@ import org.springframework.web.multipart.MultipartFile;
 @Service
 public class FileSystemStorageService implements StorageService {
 
+	@Value("${smoothai.image.directory}")
 	private final Path saveLocation;
 
 	@Autowired
