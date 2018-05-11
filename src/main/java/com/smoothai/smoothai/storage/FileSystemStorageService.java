@@ -23,11 +23,11 @@ public class FileSystemStorageService implements StorageService {
 	@Override
 	public String store(MultipartFile file) {
 		String filename = generateRandomFilename();
-		
-		while(isNameAlreadyExisting(filename)) {
+
+		while (isNameAlreadyExisting(filename)) {
 			filename = generateRandomFilename();
 		}
-		
+
 		try (InputStream inputStream = file.getInputStream()) {
 			Files.copy(inputStream, this.saveLocation.resolve(filename), StandardCopyOption.REPLACE_EXISTING);
 			return filename;
@@ -35,7 +35,7 @@ public class FileSystemStorageService implements StorageService {
 			throw new StorageException("Failed to store file " + filename, e);
 		}
 	}
-	
+
 	@Override
 	public Path load(String filename) {
 		return saveLocation.resolve(filename);
@@ -51,15 +51,15 @@ public class FileSystemStorageService implements StorageService {
 	}
 
 	@Override
-    public void deleteAll() {
-        FileSystemUtils.deleteRecursively(saveLocation.toFile());
-    }
-	
+	public void deleteAll() {
+		FileSystemUtils.deleteRecursively(saveLocation.toFile());
+	}
+
 	@Override
 	public void delete(String filename) {
 		saveLocation.resolve(filename).toFile().delete();
 	}
-	
+
 	private static String generateRandomFilename() {
 		int length = 10;
 		boolean useLetters = true;
@@ -67,14 +67,14 @@ public class FileSystemStorageService implements StorageService {
 
 		return RandomStringUtils.random(length, useLetters, useNumbers);
 	}
-	
+
 	private Boolean isNameAlreadyExisting(String filename) {
-		for (File fileEntry: saveLocation.toFile().listFiles()) {
+		for (File fileEntry : saveLocation.toFile().listFiles()) {
 			if (fileEntry.getName().equals(filename)) {
 				return true;
 			}
 		}
-		
+
 		return false;
 	}
 }
