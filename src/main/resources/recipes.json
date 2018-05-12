@@ -1,5 +1,6 @@
 [
 	{
+		"name": "missing 1!",
 		"ingredients":
 		{
 			"strawberry": "200g",
@@ -16,11 +17,12 @@
 		"serves": 1
 	},
 	{
+		"name": "missing 2!",
 		"ingredients":
 		{
 			"grapefruit": "1 large piece",
 			"orange": "2 pieces",
-			"mint leaves": "3-4 twigs",
+			"mint leaves": "3-4 twigs"
 		},
 		"preparation":
 		[
@@ -32,11 +34,12 @@
 		"serves": 1
 	},
 	{
+		"name": "missing 3!",
 		"ingredients":
 		{
 			"banana": "2 very ripe pieces",
 			"cellery": "2 stalks",
-			"lemon": "1 small",
+			"lemon": "1 small"
 		},
 		"preparation":
 		[

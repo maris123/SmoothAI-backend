@@ -23,6 +23,7 @@ import org.springframework.core.io.ResourceLoader;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+@SuppressWarnings("deprecation")
 @RunWith(MockitoJUnitRunner.Silent.class)
 public class SmoothieBookTest {
 
@@ -38,9 +39,9 @@ public class SmoothieBookTest {
 		Resource resource = mock(Resource.class);
 		@SuppressWarnings("deprecation")
 		InputStream inputStream = new StringBufferInputStream(MAPPER.writeValueAsString(Arrays.asList(
-				buildRecipe("inam1", "ingredient value 1", "preparation 1", 1),
-				buildRecipe("inam2", "ingredient value 2", "preparation 2", 2),
-				buildRecipe("inam3", "ingredient value 3", "preparation 3", 3)
+				buildRecipe("rnam1", "inam1", "ingredient value 1", "preparation 1", 1),
+				buildRecipe("rnam2", "inam2", "ingredient value 2", "preparation 2", 2),
+				buildRecipe("rnam3", "inam3", "ingredient value 3", "preparation 3", 3)
 		)) + "\n");
 		when(resource.getInputStream()).thenReturn(inputStream);
 		when(resourceLoader.getResource(anyString())).thenReturn(resource);
@@ -66,10 +67,9 @@ public class SmoothieBookTest {
 		assertEquals(0, recipes.size());
 	}
 
-	private SmoothieRecipe buildRecipe(String ingredientName, String ingredientValue, String preparationLine, int serves) {
+	private SmoothieRecipe buildRecipe(String recipeName, String ingredientName, String ingredientValue, String preparationLine, int serves) {
 		Map<String, String> ingredients = new HashMap<>();
 		ingredients.put(ingredientName, ingredientValue);
-		return new SmoothieRecipe(ingredients, new String[]{preparationLine}, serves);
+		return new SmoothieRecipe(recipeName, ingredients, new String[]{preparationLine}, serves);
 	}
-	
 }

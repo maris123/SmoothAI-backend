@@ -12,6 +12,7 @@ import org.junit.Test;
 
 public class SmoothieRecipeTest {
 
+	private static final String RECIPE_NAME = "RNAME";
 	private static final int SERVES = 14;
 	private static final String[] PREPARATION = new String[] {"Step 1", "Step 2", "Step 3"};
 	private static final Map<String, String> INGREDIENTS = new HashMap<>();
@@ -21,7 +22,7 @@ public class SmoothieRecipeTest {
 		INGREDIENTS.put("three", "three value");
 	}
 	
-	private SmoothieRecipe recipe = new SmoothieRecipe(INGREDIENTS, PREPARATION, SERVES);
+	private SmoothieRecipe recipe = new SmoothieRecipe(RECIPE_NAME, INGREDIENTS, PREPARATION, SERVES);
 	
 	@Test
 	public void returnEmptyListWhenNoMatch() {
