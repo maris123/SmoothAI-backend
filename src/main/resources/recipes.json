@@ -28,7 +28,7 @@
 	{
 		"name": "missing 2!",
 		"ingredients":
-		{
+		[
 			{
 				"name": "grapefruit",
 				"value": "1 large piece"
@@ -41,7 +41,7 @@
 				"name": "mint leaves",
 				"value": "3-4 twigs"
 			}
-		},
+		],
 		"preparation":
 		[
 			"De-seed grapefruit and orange",
@@ -54,7 +54,7 @@
 	{
 		"name": "missing 3!",
 		"ingredients":
-		{
+		[
 			{
 				"name": "banana",
 				"value": "2 very ripe pieces"
@@ -67,7 +67,7 @@
 				"name": "lemon",
 				"value": "1 small"
 			}
-		},
+		],
 		"preparation":
 		[
 			"De-seed and peel lemon",
@@ -80,7 +80,7 @@
 	{
 		"name": "SoloBanana Smoothie",
 		"ingredients":
-		{
+		[
 			{
 				"name": "banana",
 				"value": "2 very ripe pieces"
@@ -105,7 +105,7 @@
 				"name": "ice",
 				"value": "1 cup of ice (optional)"
 			}
-		},
+		],
 		"preparation":
 		[
 			"Peel the banana",
@@ -118,7 +118,7 @@
 	{
 		"name": "Banana PB&J",
 		"ingredients":
-		{
+		[
 			{
 				"name": "banana",
 				"value": "1 frozen banana"
@@ -139,7 +139,7 @@
 				"name": "seedless strawberry",
 				"value": "2 tablespoons seedless strawberry"
 			}
-		},
+		],
 		"preparation":
 		[
 			"Peel the banana",
@@ -152,7 +152,7 @@
 	{
 		"name": "Triple Date",
 		"ingredients":
-		{
+		[
 			{
 				"name": "banana",
 				"value": "2 bananas"
@@ -173,7 +173,7 @@
 				"name": "ice",
 				"value": "1/2 cups of ice (optional)"
 			}
-		},
+		],
 		"preparation":
 		[
 			"Peel the banana",
@@ -188,7 +188,7 @@
 	{
 		"name": "Ebony Banana (wink)",
 		"ingredients":
-		{
+		[
 			{
 				"name": "banana",
 				"value": "1 banana"
@@ -209,7 +209,7 @@
 				"name": "ice",
 				"value": "1/2 cups of ice (optional)"
 			}
-		},
+		],
 		"preparation":
 		[
 			"Peel the banana",
