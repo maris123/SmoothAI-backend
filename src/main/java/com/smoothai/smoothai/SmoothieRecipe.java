@@ -15,8 +15,8 @@ public class SmoothieRecipe {
 	@JsonCreator
 	public SmoothieRecipe(
 			@JsonProperty("ingredients") final Map<String, String> ingredients,
-			@JsonProperty("ingredients") final String[] preparation, 
-			@JsonProperty("ingredients") final int serves) {
+			@JsonProperty("preparation") final String[] preparation, 
+			@JsonProperty("serves") final int serves) {
 		super();
 		this.ingredients = ingredients;
 		this.preparation = preparation;
