@@ -1,6 +1,8 @@
 package com.smoothai.smoothai;
 
+import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
@@ -31,5 +33,11 @@ public class SmoothieRecipe {
 
 	public int getServes() {
 		return serves;
+	}
+	
+	public List<String> matches(final List<String> ingredients) {
+		return this.ingredients.keySet().stream().filter((String ingredient) -> 
+			ingredients != null && ingredients.contains(ingredient)
+		).collect(Collectors.toList());
 	}
 }
