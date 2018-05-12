@@ -2,11 +2,20 @@
 	{
 		"name": "missing 1!",
 		"ingredients":
-		{
-			"strawberry": "200g",
-			"lemon": "1 piece",
-			"grapes": "200g"
-		},
+		[
+			{
+				"name": "strawberry",
+				"value": "200g"
+			},
+			{
+				"name": "lemon",
+				"value": "1 piece"
+			},
+			{
+				"name": "grapes",
+				"value": "200g"
+			}
+		],
 		"preparation":
 		[
 			"De-seed the grapes and the lemon",
@@ -20,9 +29,18 @@
 		"name": "missing 2!",
 		"ingredients":
 		{
-			"grapefruit": "1 large piece",
-			"orange": "2 pieces",
-			"mint leaves": "3-4 twigs"
+			{
+				"name": "grapefruit",
+				"value": "1 large piece"
+			},
+			{
+				"name": "orange",
+				"value": "2 pieces"
+			},
+			{
+				"name": "mint leaves",
+				"value": "3-4 twigs"
+			}
 		},
 		"preparation":
 		[
@@ -37,9 +55,18 @@
 		"name": "missing 3!",
 		"ingredients":
 		{
-			"banana": "2 very ripe pieces",
-			"cellery": "2 stalks",
-			"lemon": "1 small"
+			{
+				"name": "banana",
+				"value": "2 very ripe pieces"
+			},
+			{
+				"name": "cellery",
+				"value": "2 stalks"
+			},
+			{
+				"name": "lemon",
+				"value": "1 small"
+			}
 		},
 		"preparation":
 		[
