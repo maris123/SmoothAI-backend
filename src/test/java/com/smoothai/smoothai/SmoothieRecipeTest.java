@@ -3,10 +3,9 @@ package com.smoothai.smoothai;
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.junit.Test;
 
@@ -15,11 +14,11 @@ public class SmoothieRecipeTest {
 	private static final String RECIPE_NAME = "RNAME";
 	private static final int SERVES = 14;
 	private static final String[] PREPARATION = new String[] {"Step 1", "Step 2", "Step 3"};
-	private static final Map<String, String> INGREDIENTS = new HashMap<>();
+	private static final List<SmoothieIngredient> INGREDIENTS = new ArrayList<>();
 	static {
-		INGREDIENTS.put("one", "one value");
-		INGREDIENTS.put("two", "two value");
-		INGREDIENTS.put("three", "three value");
+		INGREDIENTS.add(new SmoothieIngredient("one", "one value"));
+		INGREDIENTS.add(new SmoothieIngredient("two", "two value"));
+		INGREDIENTS.add(new SmoothieIngredient("three", "three value"));
 	}
 	
 	private SmoothieRecipe recipe = new SmoothieRecipe(RECIPE_NAME, INGREDIENTS, PREPARATION, SERVES);

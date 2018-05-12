@@ -8,10 +8,9 @@ import static org.mockito.Mockito.when;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.StringBufferInputStream;
+import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -37,7 +36,6 @@ public class SmoothieBookTest {
 	@Before
 	public void setUpRecipes() throws IOException {
 		Resource resource = mock(Resource.class);
-		@SuppressWarnings("deprecation")
 		InputStream inputStream = new StringBufferInputStream(MAPPER.writeValueAsString(Arrays.asList(
 				buildRecipe("rnam1", "inam1", "ingredient value 1", "preparation 1", 1),
 				buildRecipe("rnam2", "inam2", "ingredient value 2", "preparation 2", 2),
@@ -52,7 +50,7 @@ public class SmoothieBookTest {
 	public void returnsMatchingRecipes() {
 		List<SmoothieRecipe> recipes = smoothieBook.matching(Arrays.asList("inam1"));
 		assertEquals(1, recipes.size());
-		assertEquals("ingredient value 1", recipes.get(0).getIngredients().get("inam1"));
+		assertEquals("ingredient value 1", recipes.get(0).getIngredients().get(0).getValue());
 	}
 	
 	@Test
@@ -68,8 +66,8 @@ public class SmoothieBookTest {
 	}
 
 	private SmoothieRecipe buildRecipe(String recipeName, String ingredientName, String ingredientValue, String preparationLine, int serves) {
-		Map<String, String> ingredients = new HashMap<>();
-		ingredients.put(ingredientName, ingredientValue);
+		List<SmoothieIngredient> ingredients = new ArrayList<>();
+		ingredients.add(new SmoothieIngredient(ingredientName, ingredientValue));
 		return new SmoothieRecipe(recipeName, ingredients, new String[]{preparationLine}, serves);
 	}
 }
