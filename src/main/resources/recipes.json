@@ -1,0 +1,50 @@
+[
+	{
+		"ingredients":
+		{
+			"strawberry": "200g",
+			"lemon": "1 piece",
+			"grapes": "200g"
+		},
+		"preparation":
+		[
+			"De-seed the grapes and the lemon",
+			"Pass strawberries through a sieve",
+			"Put everything in blender",
+			"Blend thoroughly"
+		],
+		"serves": 1
+	},
+	{
+		"ingredients":
+		{
+			"grapefruit": "1 large piece",
+			"orange": "2 pieces",
+			"mint leaves": "3-4 twigs",
+		},
+		"preparation":
+		[
+			"De-seed grapefruit and orange",
+			"Put everything in blender",
+			"Blend thoroughly",
+			"Pass through a sieve"
+		],
+		"serves": 1
+	},
+	{
+		"ingredients":
+		{
+			"banana": "2 very ripe pieces",
+			"cellery": "2 stalks",
+			"lemon": "1 small",
+		},
+		"preparation":
+		[
+			"De-seed and peel lemon",
+			"Put everything in blender",
+			"Blend thoroughly",
+			"Pass through a sieve"
+		],
+		"serves": 1
+	}
+]
