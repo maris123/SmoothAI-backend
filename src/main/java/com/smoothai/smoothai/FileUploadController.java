@@ -3,6 +3,7 @@ package com.smoothai.smoothai;
 import static org.springframework.http.HttpStatus.OK;
 
 import java.nio.file.Path;
+import java.util.List;
 
 import javax.servlet.annotation.MultipartConfig;
 
@@ -38,10 +39,9 @@ public class FileUploadController {
 	public ResponseEntity<Object> getRecipes(@RequestParam("uploadedFile") MultipartFile uploadedFileRef) {
 		String filename = storageService.store(uploadedFileRef);
 		Path storedFilePath = storageService.load(filename);
-		scriptService.getFruits(storedFilePath);
+		List<String> ingredients = scriptService.getIngredients(storedFilePath);
 		storageService.delete(filename);
-		// TODO Now returns the absolute path of the stored file. Should be changed to
-		// return recipes
-		return new ResponseEntity<>(smoothieBook.matching(null), OK);
+
+		return new ResponseEntity<>(smoothieBook.matching(ingredients), OK);
 	}
 }

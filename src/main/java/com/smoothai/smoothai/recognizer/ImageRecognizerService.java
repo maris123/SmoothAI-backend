@@ -5,5 +5,5 @@ import java.util.List;
 
 public interface ImageRecognizerService {
 
-	List<String> getFruits(Path filePath);
+	List<String> getIngredients(Path filePath);
 }
