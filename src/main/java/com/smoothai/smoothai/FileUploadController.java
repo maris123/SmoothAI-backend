@@ -4,8 +4,7 @@ import static org.springframework.http.HttpStatus.OK;
 
 import java.nio.file.Path;
 import java.util.List;
-
-import javax.servlet.annotation.MultipartConfig;
+import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -18,8 +17,9 @@ import com.smoothai.smoothai.recognizer.PythonScriptRecognizerService;
 import com.smoothai.smoothai.storage.StorageService;
 
 @RestController
-@MultipartConfig(fileSizeThreshold = 20971520)
 public class FileUploadController {
+
+	private Logger log = Logger.getLogger(FileUploadController.class.toString());
 
 	private final StorageService storageService;
 	private final SmoothieBook smoothieBook;
@@ -37,6 +37,8 @@ public class FileUploadController {
 	// http://codophile.com/2015/05/27/how-to-upload-binary-file-to-spring-rest-service/
 	@PostMapping("/recipes")
 	public ResponseEntity<Object> getRecipes(@RequestParam("uploadedFile") MultipartFile uploadedFileRef) {
+		log.info("Got request on /recipes");
+
 		String filename = storageService.store(uploadedFileRef);
 		Path storedFilePath = storageService.load(filename);
 		List<String> ingredients = scriptService.getIngredients(storedFilePath);

@@ -7,6 +7,7 @@ import java.io.InputStreamReader;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Logger;
 
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -14,8 +15,10 @@ import org.springframework.stereotype.Service;
 @Service
 public class PythonScriptRecognizerService implements ImageRecognizerService {
 
+	private Logger log = Logger.getLogger(PythonScriptRecognizerService.class.toString());
+
 	@Value("${smoothai.darknet.path}")
-	private Path darknetApp;
+	private Path darknetPath;
 
 	@Override
 	public List<String> getIngredients(Path filePath) {
@@ -26,9 +29,10 @@ public class PythonScriptRecognizerService implements ImageRecognizerService {
 		List<String> recognizeResult = new ArrayList<>();
 
 		try {
+			log.info("Started darknet process");
 			ProcessBuilder processBuilder = new ProcessBuilder("./darknet", "detect", "cfg/yolov3.cfg",
 					"yolov3.weights", filePath.toString());
-			processBuilder.directory(new File(darknetApp.toString()));
+			processBuilder.directory(new File(darknetPath.toString()));
 			Process process = processBuilder.start();
 
 			BufferedReader in = new BufferedReader(new InputStreamReader(process.getInputStream()));
@@ -41,6 +45,7 @@ public class PythonScriptRecognizerService implements ImageRecognizerService {
 
 		}
 
+		log.info("Finished process.");
 		return recognizeResult;
 	}
 }
