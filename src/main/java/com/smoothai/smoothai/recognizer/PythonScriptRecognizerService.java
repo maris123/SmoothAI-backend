@@ -37,7 +37,7 @@ public class PythonScriptRecognizerService implements ImageRecognizerService {
 				output.append(readLine + System.lineSeparator());
 			}
 		} catch (IOException e) {
-			throw e;
+			
 		}
 
 		return output.toString();
