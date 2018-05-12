@@ -19,22 +19,23 @@ import com.smoothai.smoothai.storage.StorageService;
 @RestController
 @MultipartConfig(fileSizeThreshold = 20971520)
 public class FileUploadController {
-	
+
 	private final StorageService storageService;
 
-    @Autowired
-    public FileUploadController(StorageService storageService) {
-        this.storageService = storageService;
-    }
-    
+	@Autowired
+	public FileUploadController(StorageService storageService) {
+		this.storageService = storageService;
+	}
+
 	// see http://codophile.com/2015/05/27/how-to-upload-binary-file-to-spring-rest-service/
 	@PostMapping("/recipes")
 	public ResponseEntity<Object> getRecipes(@RequestParam("uploadedFile") MultipartFile uploadedFileRef) {
-		storageService.store(uploadedFileRef);
-		String filename = StringUtils.cleanPath(uploadedFileRef.getOriginalFilename());
+		String filename = storageService.store(uploadedFileRef);
 		Path storedFilePath = storageService.load(filename);
-		
-		//TODO Now returns the absolute path of the stored file. Should be changed to return recipes
+
+		storageService.delete(filename);
+		// TODO Now returns the absolute path of the stored file. Should be changed to
+		// return recipes
 		return new ResponseEntity<>(storedFilePath, OK);
 	}
 }
