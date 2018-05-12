@@ -21,10 +21,12 @@ import com.smoothai.smoothai.storage.StorageService;
 public class FileUploadController {
 
 	private final StorageService storageService;
+	private final SmoothieBook smoothieBook;
 
 	@Autowired
-	public FileUploadController(StorageService storageService) {
+	public FileUploadController(StorageService storageService, SmoothieBook smoothieBook) {
 		this.storageService = storageService;
+		this.smoothieBook = smoothieBook;
 	}
 
 	// see http://codophile.com/2015/05/27/how-to-upload-binary-file-to-spring-rest-service/
@@ -36,6 +38,6 @@ public class FileUploadController {
 		storageService.delete(filename);
 		// TODO Now returns the absolute path of the stored file. Should be changed to
 		// return recipes
-		return new ResponseEntity<>(storedFilePath, OK);
+		return new ResponseEntity<>(smoothieBook.matching(null), OK);
 	}
 }
