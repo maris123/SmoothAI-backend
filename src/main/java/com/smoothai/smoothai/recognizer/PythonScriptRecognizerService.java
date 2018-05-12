@@ -12,10 +12,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class PythonScriptRecognizerService implements ImageRecognizerService {
 
-	@Value("smoothai.recognition.script.path")
-	private Path pythonScriptPath;
-
-	@Value("smoothai.darknet.app")
+	@Value("${smoothai.darknet.app}")
 	private Path darknetApp;
 
 	@Override
