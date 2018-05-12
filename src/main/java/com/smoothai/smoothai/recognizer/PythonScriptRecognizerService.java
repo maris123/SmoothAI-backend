@@ -18,13 +18,12 @@ public class PythonScriptRecognizerService implements ImageRecognizerService {
 	private Path darknetApp;
 
 	@Override
-	public List<String> getFruits(Path filePath) {
-		String output = runPythonScript(filePath);
-		return null;
+	public List<String> getIngredients(Path filePath) {
+		return RecognizeResultParser.ingredients(runPythonScript(filePath));
 	}
 
-	private String runPythonScript(Path filePath) {
-		StringBuilder output = new StringBuilder();
+	private List<String> runPythonScript(Path filePath) {
+		List<String> recognizeResult = new ArrayList<>();
 
 		try {
 			ProcessBuilder processBuilder = new ProcessBuilder("./darknet", "detect", "cfg/yolov3.cfg",
@@ -35,14 +34,13 @@ public class PythonScriptRecognizerService implements ImageRecognizerService {
 			BufferedReader in = new BufferedReader(new InputStreamReader(process.getInputStream()));
 			String readLine;
 
-			List<String> recognizeResult = new ArrayList<>();
 			while ((readLine = in.readLine()) != null) {
 				recognizeResult.add(readLine);
 			}
 		} catch (IOException e) {
-			
+
 		}
 
-		return output.toString();
+		return recognizeResult;
 	}
 }
