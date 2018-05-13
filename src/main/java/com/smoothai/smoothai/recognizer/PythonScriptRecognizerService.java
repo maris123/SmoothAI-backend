@@ -7,22 +7,25 @@ import java.io.InputStreamReader;
 import java.nio.file.Path;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.logging.Logger;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 @Service
 public class PythonScriptRecognizerService implements ImageRecognizerService {
 
-	private Logger log = Logger.getLogger(PythonScriptRecognizerService.class.toString());
+	private final static Logger log = LoggerFactory.getLogger(PythonScriptRecognizerService.class);
 
 	@Value("${smoothai.darknet.path}")
 	private Path darknetPath;
 
 	@Override
 	public List<String> getIngredients(Path filePath) {
-		return RecognizeResultParser.ingredients(runPythonScript(filePath));
+		List<String> ingredients = RecognizeResultParser.ingredients(runPythonScript(filePath));
+		log.info("Ingredients: {}", ingredients.toString());
+		return ingredients;
 	}
 
 	private List<String> runPythonScript(Path filePath) {
@@ -42,7 +45,7 @@ public class PythonScriptRecognizerService implements ImageRecognizerService {
 				recognizeResult.add(readLine);
 			}
 		} catch (IOException e) {
-
+			log.error("Error while running darknet process. {}.", e.getMessage());
 		}
 
 		log.info("Finished process.");
