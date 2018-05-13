@@ -213,8 +213,71 @@
 		"preparation":
 		[
 			"Peel the banana",
-			"Chop the dates",
-			"Squeeze the lime",
+			"Put everything in blender",
+			"Blend thoroughly",
+			"Pass through a sieve"
+		],
+		"serves": 1
+	},
+	{
+		"name": "Carrot Apple",
+		"ingredients":
+		[
+			{
+				"name": "carrot",
+				"value": "1 cup of juice"
+			},
+			{
+				"name": "apple",
+				"value": "1 cup of juice"
+			},
+			{
+				"name": "ice",
+				"value": "1 1/2 cup"
+			}
+		],
+		"preparation":
+		[
+			"Make Apple juice",
+			"Make Carrot juice",
+			"Put everything in blender",
+			"Blend thoroughly",
+			"Pass through a sieve"
+		],
+		"serves": 1
+	},
+	{
+		"name": "PeanutButter Apple",
+		"ingredients":
+		[
+			{
+				"name": "apple",
+				"value": "1 (chopped and peeled)"
+			},
+			{
+				"name": "peanut butter",
+				"value": "3 tablespoons"
+			},
+			{
+				"name": "flaxseeds",
+				"value": "2 tablespoons"
+			},
+			{
+				"name": "soy milk",
+				"value": "1 1/2 cups"
+			},
+			{
+				"name": "ice",
+				"value": "1 1/2 cups"
+			},
+			{
+				"name": "honey",
+				"value": "to taste"
+			}
+		],
+		"preparation":
+		[
+			"Peel and chop the apple",
 			"Put everything in blender",
 			"Blend thoroughly",
 			"Pass through a sieve"
