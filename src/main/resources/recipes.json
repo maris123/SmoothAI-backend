@@ -305,5 +305,27 @@
 			"Pass through a sieve"
 		],
 		"serves": 1
+	},
+	{
+		"name": "Apples and bananas",
+		"ingredients":
+		[
+			{
+				"name": "banana",
+				"value": "2 very ripe pieces"
+			},
+			{
+				"name": "orange",
+				"value": "2 pieces"
+			}
+		],
+		"preparation":
+		[
+			"Peel the banana and orange",
+			"Put everything in blender",
+			"Blend thoroughly",
+			"Pass through a sieve"
+		],
+		"serves": 1
 	}
 ]
