@@ -87,23 +87,23 @@
 			},
 			{
 				"name": "vanilla yogurt",
-				"value": "1/2 cup of vanilla yogurt"
+				"value": "1/2 cup"
 			},
 			{
 				"name": "milk",
-				"value": "1/2 cup of milk"
+				"value": "1/2 cup"
 			},
 			{
 				"name": "honey",
-				"value": "2 teaspoons of honey"
+				"value": "2 teaspoons"
 			},
 			{
 				"name": "cinnamon",
-				"value": "a pinch of cinnamon"
+				"value": "a pinch of it"
 			},
 			{
 				"name": "ice",
-				"value": "1 cup of ice (optional)"
+				"value": "1 cup (optional)"
 			}
 		],
 		"preparation":
@@ -121,23 +121,23 @@
 		[
 			{
 				"name": "banana",
-				"value": "1 frozen banana"
+				"value": "1 frozen"
 			},
 			{
 				"name": "soy milk",
-				"value": "1 cup of soy milk"
+				"value": "1 cup"
 			},
 			{
 				"name": "peanut butter",
-				"value": "1/4 cup of creamy peanut butter"
+				"value": "1/4 cup"
 			},
 			{
 				"name": "wheat germ",
-				"value": "1/4 cup of wheat germ"
+				"value": "1/4 cup"
 			},
 			{
 				"name": "seedless strawberry",
-				"value": "2 tablespoons seedless strawberry"
+				"value": "2 tablespoons"
 			}
 		],
 		"preparation":
@@ -155,23 +155,23 @@
 		[
 			{
 				"name": "banana",
-				"value": "2 bananas"
+				"value": "2 pieces"
 			},
 			{
 				"name": "date",
-				"value": "3/4 cup chopped pitted dates"
+				"value": "3/4 cup (chopped pitted)"
 			},
 			{
 				"name": "soy milk",
-				"value": "1/2 cups of soy milk"
+				"value": "1/2 cups"
 			},
 			{
 				"name": "lime",
-				"value": "the juice of 1 lime"
+				"value": "the juice of 1 piece"
 			},
 			{
 				"name": "ice",
-				"value": "1/2 cups of ice (optional)"
+				"value": "1/2 cups (optional)"
 			}
 		],
 		"preparation":
@@ -191,23 +191,23 @@
 		[
 			{
 				"name": "banana",
-				"value": "1 banana"
+				"value": "1"
 			},
 			{
 				"name": "chocolate ice cream",
-				"value": "1 cup of chocolate ice cream"
+				"value": "1 cup"
 			},
 			{
 				"name": "milk",
-				"value": "1/2 cups of soy milk"
+				"value": "1/2 cups"
 			},
 			{
 				"name": "salt",
-				"value": "a pinch of salt "
+				"value": "a pinch of it "
 			},
 			{
 				"name": "ice",
-				"value": "1/2 cups of ice (optional)"
+				"value": "1/2 cups(optional)"
 			}
 		],
 		"preparation":
