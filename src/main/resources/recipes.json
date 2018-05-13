@@ -52,7 +52,7 @@
 		"serves": 1
 	},
 	{
-		"name": "J-Smoothie bananas on the rise",
+		"name": "J-Smoothie bananas",
 		"ingredients":
 		[
 			{
@@ -278,6 +278,28 @@
 		"preparation":
 		[
 			"Peel and chop the apple",
+			"Put everything in blender",
+			"Blend thoroughly",
+			"Pass through a sieve"
+		],
+		"serves": 1
+	},
+	{
+		"name": "Apples and bananas",
+		"ingredients":
+		[
+			{
+				"name": "banana",
+				"value": "2 very ripe pieces"
+			},
+			{
+				"name": "apple",
+				"value": "2 pieces"
+			}
+		],
+		"preparation":
+		[
+			"Peel the banana and apple",
 			"Put everything in blender",
 			"Blend thoroughly",
 			"Pass through a sieve"
